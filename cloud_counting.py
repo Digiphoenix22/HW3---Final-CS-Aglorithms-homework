@@ -1,3 +1,4 @@
+
 def dfs(matrix, x, y, z, visited):
     """
     Depth-First Search (DFS) to explore connected '1's in the 3D matrix.
@@ -48,14 +49,19 @@ def count_clouds(matrix):
 
     return cloud_count
 
-# Test the function with the provided examples
-example_1 = [[[1, 1, 0], [0, 1, 0], [1, 0, 0]],
-             [[1, 1, 0], [0, 1, 0], [1, 0, 0]]]
+# Example usage
+if __name__ == "__main__":
+    # Example matrices
+    example_1 = [[[1, 1, 0], [0, 1, 0], [1, 0, 0]],
+                 [[1, 1, 0], [0, 1, 0], [1, 0, 0]]]
 
-example_2 = [[[1, 0, 0], [0, 1, 0], [1, 0, 0]],
-             [[1, 0, 0], [0, 1, 0], [1, 0, 0]]]
+    example_2 = [[[1, 0, 0], [0, 1, 0], [1, 0, 0]],
+                 [[1, 0, 0], [0, 1, 0], [1, 0, 0]]]
 
-example_3 = [[[1, 0, 0], [0, 1, 0], [1, 0, 0]],
-             [[1, 0, 0], [0, 0, 0], [1, 0, 0]]]
+    example_3 = [[[1, 0, 0], [0, 1, 0], [1, 0, 0]],
+                 [[1, 0, 0], [0, 0, 0], [1, 0, 0]]]
 
-count_clouds(example_1), count_clouds(example_2), count_clouds(example_3)
+    # Test the function
+    print("Example 1 - Number of clouds:", count_clouds(example_1))
+    print("Example 2 - Number of clouds:", count_clouds(example_2))
+    print("Example 3 - Number of clouds:", count_clouds(example_3))
