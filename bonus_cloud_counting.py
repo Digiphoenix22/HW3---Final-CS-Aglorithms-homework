@@ -49,29 +49,19 @@ def count_clouds(matrix):
 
     return cloud_count
 
-def input_3d_matrix():
-    """
-    Allows the user to input a 3D matrix.
-    Returns:
-    list: The input 3D matrix.
-    """
-    layers = int(input("Enter the number of layers: "))
-    rows = int(input("Enter the number of rows per layer: "))
-    cols = int(input("Enter the number of columns per layer: "))
-
-    matrix = []
-    for layer in range(layers):
-        print(f"Layer {layer + 1}:")
-        current_layer = []
-        for row in range(rows):
-            current_row = list(map(int, input(f"Enter row {row + 1} with {cols} elements (0 or 1), separated by space: ").strip().split()))
-            assert len(current_row) == cols, "Incorrect number of elements in the row."
-            current_layer.append(current_row)
-        matrix.append(current_layer)
-
-    return matrix
-
 # Example usage
 if __name__ == "__main__":
-    user_matrix = input_3d_matrix()
-    print("Number of clouds:", count_clouds(user_matrix))
+    # Example matrices
+    example_1 = [[[1, 1, 0], [0, 1, 0], [1, 0, 0]],
+                 [[1, 1, 0], [0, 1, 0], [1, 0, 0]]]
+
+    example_2 = [[[1, 0, 0], [0, 1, 0], [1, 0, 0]],
+                 [[1, 0, 0], [0, 1, 0], [1, 0, 0]]]
+
+    example_3 = [[[1, 0, 0], [0, 1, 0], [1, 0, 0]],
+                 [[1, 0, 0], [0, 0, 0], [1, 0, 0]]]
+
+    # Test the function
+    print("Example 1 - Number of clouds:", count_clouds(example_1))
+    print("Example 2 - Number of clouds:", count_clouds(example_2))
+    print("Example 3 - Number of clouds:", count_clouds(example_3))
